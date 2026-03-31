@@ -2,10 +2,13 @@ import pg from 'pg'
 const { Pool } = pg;
 
 const connectionString =
-  "postgresql://postgres:t5u3i8hAKi0xFA1BP7Ri@containers-us-west-194.railway.app:6020/railway";
+  "postgresql://unearthed_tu8p_user:1th6nZ5RGURa6bVQZ7EbGDiAl1WicdHx@dpg-d6kdpingi27c73bakcdg-a.oregon-postgres.render.com/unearthed_tu8p";
 
 export const pool = new Pool({
-  connectionString,
+  connectionString: connectionString,
+  ssl: {
+    rejectUnauthorized: false
+  },
 });
 
 export default pool;
